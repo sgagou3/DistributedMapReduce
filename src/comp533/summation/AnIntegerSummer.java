@@ -11,7 +11,6 @@ import comp533.mvc.view.AMapReduceView;
 import comp533.mvc.view.MapReduceView;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AnIntegerSummer extends AMapReduceTracer implements IntegerSummer {
 	MapReduceModel model;
 	MapReduceController controller;

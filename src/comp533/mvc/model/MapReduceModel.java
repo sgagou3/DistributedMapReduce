@@ -31,10 +31,8 @@ public interface MapReduceModel extends Serializable, Remote {
 
 	void setRunnableList(final List<MapReduceSlave> aSlaveList) throws RemoteException;
 
-	@SuppressWarnings("rawtypes")
 	BlockingQueue<MapEntry> getKeyValueQueue() throws RemoteException;
 
-	@SuppressWarnings("rawtypes")
 	List<LinkedList<MapEntry>> getReductionQueueList() throws RemoteException;
 
 	MapReduceJoiner getJoiner() throws RemoteException;

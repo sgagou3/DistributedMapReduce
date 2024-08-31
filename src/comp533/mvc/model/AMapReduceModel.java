@@ -10,11 +10,9 @@ import java.util.List;
 import comp533.reduce.MapEntry;
 import comp533.slave.MapReduceSlave;
 
-@SuppressWarnings("serial")
 public class AMapReduceModel extends AnAllocatingMapReduceModel implements Serializable {
 	List<Thread> threadList;
 
-	@SuppressWarnings("rawtypes")
 	@Override
 	public void setNumThreads(final int aNewNumThreadCount) throws RemoteException {
 		final List<Thread> aNewThreadList = new ArrayList<Thread>();

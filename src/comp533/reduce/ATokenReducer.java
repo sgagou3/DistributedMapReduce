@@ -7,7 +7,6 @@ import java.util.Map;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class ATokenReducer extends AMapReduceTracer implements TokenReducer<String, Integer> {
 	@Override
 	public Map<String, Integer> reduce(final List<MapEntry<String, Integer>> aMapEntryList) {

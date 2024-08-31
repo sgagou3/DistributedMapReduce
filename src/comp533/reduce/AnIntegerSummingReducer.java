@@ -7,7 +7,6 @@ import java.util.Map;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AnIntegerSummingReducer extends AMapReduceTracer implements TokenReducer<String, Integer> {
 	final String superKey = "ResultKey";
 

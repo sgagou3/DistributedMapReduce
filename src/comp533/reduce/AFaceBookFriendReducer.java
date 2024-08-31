@@ -10,7 +10,6 @@ import java.util.Set;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AFaceBookFriendReducer extends AMapReduceTracer implements TokenReducer<String, List<String>> {
 
 	@Override

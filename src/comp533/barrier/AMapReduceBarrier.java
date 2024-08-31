@@ -2,7 +2,6 @@ package comp533.barrier;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AMapReduceBarrier extends AMapReduceTracer implements MapReduceBarrier {
 	int totalThreadCount;
 	int currentThreadCount = 0;

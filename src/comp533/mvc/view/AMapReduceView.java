@@ -4,7 +4,6 @@ import java.beans.PropertyChangeEvent;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AMapReduceView extends AMapReduceTracer implements MapReduceView {
 	@Override
 	public String toString() {

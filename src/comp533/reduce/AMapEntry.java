@@ -1,6 +1,5 @@
 package comp533.reduce;
 
-@SuppressWarnings("serial")
 public class AMapEntry<K, V> implements MapEntry<K, V> {
 	K key;
 	V value;

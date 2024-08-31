@@ -2,7 +2,6 @@ package comp533.joiner;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AMapReduceJoiner extends AMapReduceTracer implements MapReduceJoiner {
 	int threadCount;
 	int currentThreadCount = 0;

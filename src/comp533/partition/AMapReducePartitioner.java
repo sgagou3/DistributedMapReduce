@@ -2,7 +2,6 @@ package comp533.partition;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AMapReducePartitioner extends AMapReduceTracer implements MapReducePartitioner<String, Integer> {
 	@Override
 	public int getPartition(final String key, final Object value, final int numberOfPartitions) {

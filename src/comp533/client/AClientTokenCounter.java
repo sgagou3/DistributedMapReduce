@@ -8,10 +8,8 @@ import comp533.reduce.MapEntry;
 import comp533.reduce.TokenReducer;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AClientTokenCounter extends AMapReduceTracer implements ClientTokenCounter {
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public Map reduce(final List<MapEntry> aMapEntryList) {
 		traceRemoteList(aMapEntryList);

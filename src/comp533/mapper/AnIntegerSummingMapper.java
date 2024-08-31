@@ -7,7 +7,6 @@ import comp533.reduce.AMapEntry;
 import comp533.reduce.MapEntry;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AnIntegerSummingMapper extends AMapReduceTracer implements TokenMapper<String, Integer> {
 	@Override
 	public List<MapEntry<String, Integer>> map(final List<String> aKeyList) {

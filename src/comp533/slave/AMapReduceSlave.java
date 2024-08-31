@@ -19,7 +19,6 @@ import comp533.reduce.MapEntry;
 import comp533.reduce.TokenReducer;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AMapReduceSlave extends AMapReduceTracer implements MapReduceSlave {
 	MapReduceModel model;
 	MapReduceBarrier barrier;
@@ -27,11 +26,8 @@ public class AMapReduceSlave extends AMapReduceTracer implements MapReduceSlave 
 
 	int slaveNumber;
 
-	@SuppressWarnings("rawtypes")
 	MapReducePartitioner partitioner;
-	@SuppressWarnings("rawtypes")
 	TokenReducer reducer;
-	@SuppressWarnings("rawtypes")
 	List<LinkedList<MapEntry>> aReductionQueueList;
 
 	public AMapReduceSlave(final MapReduceModel aModel, final int aSlaveNumber) {
@@ -46,7 +42,6 @@ public class AMapReduceSlave extends AMapReduceTracer implements MapReduceSlave 
 		}
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private List<MapEntry> getInput() throws RemoteException {
 		final List<MapEntry> aConsumedList = new ArrayList<MapEntry>();
 		final BlockingQueue<MapEntry> aBlockingQueue = model.getKeyValueQueue();
@@ -73,7 +68,6 @@ public class AMapReduceSlave extends AMapReduceTracer implements MapReduceSlave 
 		return aConsumedList;
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void doFirstReduction(final Map<Object, Object> aReducedMap) throws RemoteException {
 		synchronized (aReductionQueueList) {
 			for (final Map.Entry aMapEntry : aReducedMap.entrySet()) {
@@ -86,7 +80,6 @@ public class AMapReduceSlave extends AMapReduceTracer implements MapReduceSlave 
 		}
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void doSecondReduction() throws RemoteException {
 		synchronized (aReductionQueueList) {
 			final LinkedList<MapEntry> aFinalReductionList = aReductionQueueList.get(slaveNumber);
@@ -113,7 +106,6 @@ public class AMapReduceSlave extends AMapReduceTracer implements MapReduceSlave 
 		}
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public void run() {
 		try {

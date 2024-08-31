@@ -27,12 +27,10 @@ import comp533.reduce.MapEntry;
 import comp533.slave.MapReduceSlave;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AnAllocatingMapReduceModel extends AMapReduceTracer implements MapReduceModel {
 	PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
 	String inputString;
 
-	@SuppressWarnings("rawtypes")
 	Map mapReduceResult;
 
 	Map<Integer, ClientTokenCounter> slaveClientMapping = new HashMap<Integer, ClientTokenCounter>();
@@ -44,9 +42,7 @@ public class AnAllocatingMapReduceModel extends AMapReduceTracer implements MapR
 
 	int threadCount;
 
-	@SuppressWarnings("rawtypes")
 	BlockingQueue<MapEntry> blockingQueue = new ArrayBlockingQueue<MapEntry>(BUFFER_SIZE);
-	@SuppressWarnings("rawtypes")
 	List<LinkedList<MapEntry>> reductionList = new ArrayList<LinkedList<MapEntry>>();
 
 	MapReduceJoiner joiner;
@@ -76,7 +72,6 @@ public class AnAllocatingMapReduceModel extends AMapReduceTracer implements MapR
 		final String[] aSplitInputStringArray = inputString.split(" ");
 		final List<String> aSplitInputArrayList = Arrays.asList(aSplitInputStringArray);
 
-		@SuppressWarnings("unchecked")
 		final TokenMapper<String, Integer> mapper = (TokenMapper<String, Integer>) AMapperFactory.getMapper();
 		final List<MapEntry<String, Integer>> aMappingResult = mapper.map(aSplitInputArrayList);
 
@@ -123,7 +118,6 @@ public class AnAllocatingMapReduceModel extends AMapReduceTracer implements MapR
 		}
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private synchronized void completeReduction(final Map aReducingResult) {
 		for (final LinkedList<MapEntry> aNextReductionList : reductionList) {
 			placeReductionResult(aNextReductionList, aReducingResult);
@@ -131,7 +125,6 @@ public class AnAllocatingMapReduceModel extends AMapReduceTracer implements MapR
 		}
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void placeReductionResult(final LinkedList<MapEntry> aNextReductionList,
 			final Map<String, Object> aReducingResult) {
 		for (MapEntry<String, Object> aNextReduction : aNextReductionList) {
@@ -139,7 +132,6 @@ public class AnAllocatingMapReduceModel extends AMapReduceTracer implements MapR
 		}
 	}
 
-	@SuppressWarnings("rawtypes")
 	private void clearReductionQueueList() {
 		for (LinkedList<MapEntry> aReductionQueue : reductionList) {
 			aReductionQueue.clear();
@@ -151,7 +143,6 @@ public class AnAllocatingMapReduceModel extends AMapReduceTracer implements MapR
 		propertyChangeSupport.addPropertyChangeListener(aNewListener);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public Map<String, Integer> getResult() {
 		return mapReduceResult;
@@ -162,13 +153,11 @@ public class AnAllocatingMapReduceModel extends AMapReduceTracer implements MapR
 		return threadCount;
 	}
 
-	@SuppressWarnings("rawtypes")
 	@Override
 	public BlockingQueue<MapEntry> getKeyValueQueue() {
 		return blockingQueue;
 	}
 
-	@SuppressWarnings("rawtypes")
 	@Override
 	public List<LinkedList<MapEntry>> getReductionQueueList() {
 		return reductionList;

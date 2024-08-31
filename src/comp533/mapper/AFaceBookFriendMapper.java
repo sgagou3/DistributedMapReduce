@@ -8,7 +8,6 @@ import comp533.reduce.AMapEntry;
 import comp533.reduce.MapEntry;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
-@SuppressWarnings("serial")
 public class AFaceBookFriendMapper extends AMapReduceTracer implements TokenMapper<String, List<String>> {
 	static final String SEPARATOR = "_";
 
